@@ -17,9 +17,8 @@ function content() {
     });
 }
 function btnClick() {
-  content();
   window.location.reload();
+  content();
 }
 
-btn.addEventListener("click", btnClick);
-window.addEventListener("load", content);
+content();
