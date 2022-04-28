@@ -1,15 +1,25 @@
-fetch('https://api.adviceslip.com/advice').then((data) => {
-    return data.json();
-}).then((adviceData) => {
-    console.log(adviceData.slip.advice);
-    rslt = `
+let btn = document.querySelector("#clicker");
+let adviceText = document.querySelector("#myAdviceText");
+let adviceID = document.querySelector("#myAdviceID");
 
-                <h2 id="myAdviceID">Advice #${adviceData.slip.id}</h2>
+function content() {
+  fetch("https://api.adviceslip.com/advice")
+    .then((data) => {
+      return data.json();
+    })
+    .then((adviceData) => {
+      console.log(adviceData);
+      adviceText.innerHTML = `"${adviceData.slip.advice}"`;
+      adviceID.innerHTML = `Advice #${adviceData.slip.id}`;
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+}
+function btnClick() {
+  content();
+  window.location.reload();
+}
 
-                <h3 id="myAdviceText">${adviceData.slip.advice}</h3>
-
-        `;
-    document.getElementById("myData").innerHTML = rslt;
-}).catch((err) => {
-    console.log(err);
-});
+btn.addEventListener("click", btnClick);
+window.addEventListener("load", content);

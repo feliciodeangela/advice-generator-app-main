@@ -15,15 +15,16 @@ body {
     left: 50%;
     transform: translate(-50%, -50%);
     width: 400px;
+    padding: 25px;
 }
 
-h2 {
+#myData h2 {
     color: hsl(150, 100%, 66%);
     font-size: 10px;
     text-align: center;
 }
 
-h3 {
+#myData h3 {
     color: hsl(193, 38%, 86%);
     font-size: 15px;
     text-align: center;
@@ -34,6 +35,31 @@ h3 {
 }
 
 .attribution {
+    bottom: 0;
+    position: fixed;
+    width: 100%;
+    color: aliceblue;
     font-size: 11px;
     text-align: center;
+}
+
+#clicker{
+    margin: 5px;
+    border: 0;
+    border-radius: 50%;
+    width: 25px;
+    height: 25px;
+    background-color: hsl(150, 100%, 66%);
+    position: fixed;
+    left: 50%;
+    bottom: -20%;
+    -ms-transform: translate(-50%,-50%);
+    transform: translate(-50%,-50%);
+}
+#clicker:hover{
+    box-shadow: 0 0 10px hsl(150,100%,66%);
+}
+
+#sep{
+    align-self: center;
 }
