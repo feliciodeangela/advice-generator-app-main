@@ -62,4 +62,10 @@ body {
 
 #sep{
     align-self: center;
+    width:max-content;
+}
+#sep-div {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
 }
